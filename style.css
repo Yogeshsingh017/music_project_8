@@ -1,0 +1,154 @@
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    font-size: 15pt;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    background-color:#666699;
+    padding:30px
+;
+}
+
+img {
+    height:100px;
+}
+
+.music-display {
+    transform:translateY(-30px);
+    height:180px;
+    margin:30px;
+    border-radius:15px;
+    border:1px solid black;
+    box-shadow:1px 1px 1px 1px dimgray;
+}
+audio {
+    width:290px;
+    box-shadow:1px 1px 1px 1px black;
+    border-radius:30px;
+    outline:none;
+    margin:20px 0;
+    position:relative;
+}
+
+.left {
+    transform:rotateY(200deg);
+    position:absolute;
+    top:340px;
+    left:10px;
+     
+}
+
+#arrow {
+    height:40px;
+}
+
+.container {
+    height:650px;
+    background:rgba(255,255,255,.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    position:relative;
+    padding:20px;
+    width:300px;
+    border-radius:15px;
+    box-shadow:1px 1px 1px 1px black;
+    
+}
+
+.right {
+    position:absolute;
+    right:10px;
+    top:340px;
+}
+.music-display {
+    margin-bottom:50px;
+}
+
+.song-title {
+    font-size:30px;
+    background:gray;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:5px;
+    border:0.5px solid black;
+    border-radius:10px;
+    box-shadow:1px 1px 1px 1px black;
+    color:white;
+    font-weight:900;
+    text-shadow:1px 1px 1px black
+} 
+.controls {
+    width:298px;
+    height:59px;
+    background-color:gray;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:40px;
+    border:1px solid black;
+    border-radius:30px;
+    box-shadow:1px 1px 1px 1px black;
+}
+
+.music-count{
+    height:60px;
+    background:rgba(255,255,255,.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:90%;
+    margin-top:30px;
+    font-size:40px;
+    font-weight:900;
+    color:white;
+    text-shadow:1.5px 1px 1px black;
+    border-radius:15px;
+    box-shadow:1px 1px 1px 1px black;
+    border:1px solid black;
+}
+
+.firstT {
+    color:white;
+    margin-bottom:20px;
+    font-weight:900;
+    text-shadow:1px 1px 1px black;
+    letter-spacing:2px;
+}
+
+@media (min-width:980px){
+    body {
+        background:pink;
+        font-size:50px;
+    }
+    
+  .container {
+        width:690px;
+        height:900px;
+    }
+    
+   .music-display {
+       height:290px;
+   }
+   
+  #arrow {
+      height:80px;
+} 
+.song-title {
+    height:100px;
+    width:90%;
+}
+.controls {
+    width:90%;
+}
+audio {
+    width:98%;
+}
+}

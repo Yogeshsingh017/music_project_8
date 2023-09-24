@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MUSIC-PLAYER</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+       <h1 class="firstT">NCS MUSIC</h1>
+       <!--image-music-->
+       
+      
+       <img src="https://dl.dropbox.com/s/8weaqqq7uogd334/Screenshot_20210401_113202.jpg" class="music-display">
+       
+       <h1 class="song-title">DIAMOND EYES</h1>
+       
+       <!--arrow-->
+       
+       
+       <img src="https://dl.dropbox.com/s/88xye12g9e5psug/double-right-arrow-transparent-1.png" id="arrow" class="right">
+         <img src="https://dl.dropbox.com/s/88xye12g9e5psug/double-right-arrow-transparent-1.png" class="left" id="arrow">
+       
+       <!--audio-->
+      <div class="controls">
+      <audio controls autoplay>
+          <source src="https://dl.dropbox.com/s/k9eegpz1egix6ro/Diamond%20Eyes%20-%20Everything%20%5BNCS%20Release%5D.mp3">
+      </audio> 
+      </div>
+      <div class="music-count">
+          <p class="musicNum">1</p>
+          <p>/6</p>
+      </div>
+   </div>
+  <script>
+      let playList = [
+    {
+        music:"https://dl.dropbox.com/s/k9eegpz1egix6ro/Diamond%20Eyes%20-%20Everything%20%5BNCS%20Release%5D.mp3", 
+        musicImg:"https://dl.dropbox.com/s/8weaqqq7uogd334/Screenshot_20210401_113202.jpg", 
+        songName:"DIAMOND EYES"
+    }, {
+        music:"https://dl.dropbox.com/s/khn85llrirfh4ba/Janji%20-%20Heroes%20Tonight%20%28feat.%20Johnning%29%20%5BNCS%20Release%5D.mp3", 
+        musicImg:"https://dl.dropbox.com/s/geq7oeutmfwyjgx/Screenshot_20210401_113215.jpg", 
+        songName:"HEROES TONIGHT"
+    }, {
+        music:"https://dl.dropbox.com/s/ja51hkbzchv6rjs/V%20O%20E%20-%20Giants%20%5BNCS%20Release%5D.mp3", 
+        musicImg:"https://dl.dropbox.com/s/brk5ju9t5fuoa69/Screenshot_20210401_113112.jpg",
+        songName:"GIANTS"
+    }, {
+        music:"https://dl.dropbox.com/s/ecadandmbfddgfd/Unknown%20Brain%20-%20Superhero%20%28feat.%20Chris%20Linton%29%20%5BNCS%20Release%5D.mp3",
+        musicImg:"https://dl.dropbox.com/s/cyzgtx3rg1pdv2k/Screenshot_20210401_113139.jpg",
+        songName:"SUPERHERO"
+    }, {
+        music:"https://dl.dropbox.com/s/p9eo9mtbn3gusbo/Kisma%20-%20Fingertips%20%5BNCS%20Release%5D.mp3",
+        musicImg:"https://dl.dropbox.com/s/zs152buuaajs9pd/Screenshot_20210401_113120.jpg",
+        songName:"FINGERTIPS"
+    },{
+        music:"https://dl.dropbox.com/s/q5idp7mgst8kosx/Lost%20Sky%20-%20Fearless%20pt.II%20%28feat.%20Chris%20Linton%29%20%5BNCS%20Release%5D.mp3",
+        musicImg:"https://dl.dropbox.com/s/lrloooxeplqwhnf/Screenshot_20210401_113129.jpg",
+        songName:"FEARLESS"
+    }];
+let count = 0;
+const next = document.querySelector(".right");
+const prev = document.querySelector(".left");
+const title = document.querySelector(".song-title" );
+const display = document.querySelector(".music-display");
+const audio = document.querySelector("audio");
+const counters = document.querySelector(".musicNum");
+window.addEventListener("DOMContentLoaded", () =>{
+    myFunction(count);
+})
+
+function myFunction(counter){
+  const items = playList[counter]
+    title.textContent = items.songName
+    audio.src = items.music
+    display.src = items.musicImg
+    counters.textContent = count +1;
+}
+
+next.addEventListener("click",() => {
+    count++ 
+    if(count > playList.length -1){
+        count = 0;
+    }
+    myFunction(count)
+});
+
+prev.addEventListener("click",() => {
+    count-- 
+    if(count < 0){
+        count = playList.length -1
+    }
+    myFunction(count)
+});
+  </script>
+</body>
+</html>
